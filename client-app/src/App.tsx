@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Header } from 'semantic-ui-react'
+import { Header, List } from 'semantic-ui-react'
 import './App.css';
 import axios from 'axios';
 
@@ -23,10 +23,13 @@ class App extends Component{
     return (
       <div>
         <Header as='h2' icon='users' content='Reactivities' />
+        <List>
+        {this.state.values.map((value: any) => (
+          <List.Item key={value.id}>{value.name}</List.Item>
+        ))}
+        </List>
           <ul>
-            {this.state.values.map((value: any) => (
-              <li key={value.id}>{value.name}</li>
-            ))}
+           
           </ul>
       </div>
     );
